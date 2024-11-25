@@ -1,0 +1,422 @@
+:root {
+    /* Color Variables */
+    --primary-color: #084298;
+    --success-color: #6ab04c;
+    --warning-color: #f0932b;
+    --danger-color: #eb4d4b;
+    --violet-color: #922fbd;
+    --yellow-color: #343A40;
+    --lite-color: #0BDBDB;
+    --tan-color: #d2b48c;
+    --beige-color: #f5f5dc;
+    --white-color: #ffffff;
+    --main-bg-color: #ffffff;
+    --main-color: #000000;
+    --second-bg-color: #f5f5dc;
+    --second-color: #999;
+    
+    /* YearPicker Variables */
+    --text-color: #000000;
+    --border-color: #ccc;
+    --background-color: #ffffff;
+    --selected-text-color: #C0392B;
+    --hover-background-color: #d2b48c;
+}
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, Helvetica, sans-serif;
+    background: var(--beige-color);
+    color: var(--main-color);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Typography */
+h1 {
+    font-size: 2rem;
+    color: var(--tan-color);
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+/* Navigation */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 65px;
+    padding: 0 20px;
+    background: var(--beige-color);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 101;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    padding: 10px;
+    text-decoration: none;
+    color: var(--second-color);
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    cursor: pointer;
+    color: var(--tan-color);
+}
+
+.navbar-text {
+    font-size: 24px;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #3a3a3a;
+    margin: 0;
+    padding: 0;
+}
+
+/* Logo */
+.logo {
+    height: 40px;
+    margin: 0 10px;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    height: calc(100vh - 65px);
+    position: fixed;
+    margin-top: 65px;
+    background: var(--beige-color);
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+    transition: width 0.3s ease;
+    z-index: 100;
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.sidebar-nav-item {
+    width: 100%;
+}
+
+.sidebar-nav-link {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    color: var(--main-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.sidebar-nav-link div {
+    margin-right: 15px;
+}
+
+.sidebar-nav-link:hover {
+    background: var(--tan-color);
+    color: var(--white-color);
+}
+
+.sidebar-nav-link.active {
+    background: var(--tan-color);
+    color: var(--white-color);
+}
+
+/* Main Content Wrapper */
+.wrapper {
+    margin-left: 250px;
+    padding: 85px 20px 20px;
+    min-height: calc(100vh - 65px);
+}
+
+/* Dashboard Cards */
+.row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: var(--white-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    min-height: 150px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.counter {
+    padding: 20px;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--white-color);
+    border-radius: 8px;
+}
+
+.counter h3 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+.counter p {
+    margin: 5px 0;
+}
+
+.counter i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+
+
+/* Forms */
+.form-controller input,
+.group input {
+    max-width: 300px;
+    padding: 5px 5px 5px 40px;
+    margin: 0 0 30px 0;
+    border: none;
+    border-bottom: 1px solid var(--tan-color);
+    border-radius: 0;
+    outline: none;
+    box-shadow: none;
+    background: none;
+}
+
+.form-controller.mistake small,
+.form-control.error small {
+    visibility: visible;
+    color: var(--tan-color);
+    display: inline-block;
+    margin-bottom: 15px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* Buttons */
+button,
+.sign-in,
+.fb-btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    color: var(--white-color);
+    background-color: var(--tan-color);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover,
+.sign-in:hover,
+.fb-btn:hover {
+    background-color: darken(var(--tan-color), 10%);
+}
+
+/* Background Colors */
+.bg-primary { background: var(--primary-color); }
+.bg-success { background: var(--success-color); }
+.bg-warning { background: var(--warning-color); }
+.bg-danger { background: var(--danger-color); }
+.bg-lite { background: var(--lite-color); }
+.bg-vio { background: var(--violet-color); }
+.bg-yell { background: var(--yellow-color); }
+.bg-tan { background: var(--tan-color); }
+.bg-beige { background: var(--beige-color); }
+.bg-white { background: var(--white-color); }
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .sidebar {
+        width: 70px;
+    }
+    
+    .wrapper {
+        margin-left: 70px;
+    }
+    
+    .sidebar-nav-link span {
+        display: none;
+    }
+    
+    .navbar-text {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 0;
+        transform: translateX(-100%);
+    }
+    
+    .sidebar.active {
+        width: 250px;
+        transform: translateX(0);
+    }
+    
+    .wrapper {
+        margin-left: 0;
+    }
+    
+    .row {
+        grid-template-columns: 1fr;
+    }
+    
+    .navbar {
+        padding: 0 10px;
+    }
+    
+    .navbar-text {
+        font-size: 18px;
+    }
+    
+    .card {
+        margin: 10px;
+    }
+}
+
+/* YearPicker Styles */
+.yearpicker-container {
+    position: absolute;
+    color: var(--text-color);
+    width: 280px;
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    font-size: 1rem;
+    box-shadow: 1px 1px 8px 0px rgba(0,0,0,0.2);
+    background-color: var(--background-color);
+    z-index: 10;
+}
+
+.yearpicker-header {
+    display: flex;
+    width: 100%;
+    height: 2.5rem;
+    border-bottom: 1px solid var(--border-color);
+    align-items: center;
+    justify-content: space-around;
+}
+
+.yearpicker-prev,
+.yearpicker-next {
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.yearpicker-prev:hover,
+.yearpicker-next:hover {
+    color: var(--selected-text-color);
+}
+
+.yearpicker-year {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.yearpicker-items {
+    list-style: none;
+    padding: 1rem 0.5rem;
+    flex: 0 0 33.3%;
+    width: 100%;
+}
+
+.yearpicker-items:hover {
+    background-color: var(--hover-background-color);
+    color: var(--selected-text-color);
+    cursor: pointer;
+}
+
+.yearpicker-items.selected {
+    color: var(--selected-text-color);
+}
+
+/* Utility Classes */
+.hide {
+    display: none;
+}
+
+/* Container */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    margin-top: 65px;
+}
+
+.container form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 800px;
+    background: var(--white-color);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Tables */
+.card-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table td {
+    font-family: "Source Sans Pro", sans-serif;
+    border-top: 1px solid var(--tan-color);
+    padding: 15px;
+    text-align: center;
+    background-color: var(--white-color);
+}
+
+table th {
+    font-family: "Source Sans Pro", sans-serif;
+    border-top: 1px solid var(--tan-color);
+    border-bottom: 1px solid var(--tan-color);
+    padding: 15px 12px;
+    background-color: var(--tan-color);
+    color: var(--white-color);
+}
